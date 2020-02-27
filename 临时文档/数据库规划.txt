@@ -1,0 +1,14 @@
+===========================AreaInfo=======================
+
+字段
+  id --> 数据库自己生成的主键
+  name --> 行政区域名称
+  identifier --> 标识符，用于自关联时候的查找
+	     --> A01~A99 省
+             --> AXX01~AXX99 每个省下面的市，XX表示省份
+             --> AXXXX01~AXXXX99 区/县
+             --> AXXXXXX01~AXXXXXX99 街道
+
+eg:
+  id=1,name=辽宁省,identifier=A01
+  id=2,name=沈阳市,identifier=A0101
