@@ -21,4 +21,5 @@ urlpatterns = [
 
     # 疫情通行证应用
     path("permit/", include("permit.urls", namespace="permit")),
+    path("", include("index.urls")),
 ]

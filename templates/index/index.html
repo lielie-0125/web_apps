@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block script %}
+    <script src={% static "js/qrcode.min.js" %}></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "site",
+                type: "get",
+                dataType: "text",
+                // 这里只有一个网站，将来肯定要更改的
+                success: function (site) {
+                    $("#qr-code").qrcode({
+                        width: 166,
+                        height: 166,
+                        text: site,
+                        render: "canvas"
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <div class="container h1">后台管理还没做好，先摆一张二维码</div>
+    <div class="container" id="qr-code" style="height: 167px; width: 167px;">
+    </div>
+{% endblock %}
